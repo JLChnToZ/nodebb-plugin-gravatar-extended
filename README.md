@@ -21,6 +21,9 @@ Or you can use `%email` to fetch [Adorable Avatars](http://avatars.adorable.io) 
 
 `http://api.adorable.io/avatar/128/%email.png`
 
+Installation
+-------
+`npm install nodebb-plugin-gravatar-extended`
 
 License
 -------
