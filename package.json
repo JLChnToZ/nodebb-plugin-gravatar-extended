@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/JLChnToZ/nodebb-plugin-gravatar-extended/issues"
   },
-  "homepage": "https://github.com/JLChnToZ/nodebb-plugin-gravatar-extended"
+  "homepage": "https://github.com/JLChnToZ/nodebb-plugin-gravatar-extended",
+  "dependencies": {
+    "array.from": "^0.2.0"
+  }
 }
