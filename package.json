@@ -1,6 +1,6 @@
 {
   "name": "nodebb-plugin-gravatar-extended",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "This plugin will extend some parameters to the Gravatar default image URL to make the default avatars rich.",
   "main": "index.js",
   "scripts": {
