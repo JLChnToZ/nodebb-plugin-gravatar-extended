@@ -4,7 +4,10 @@
 	"description": "This plugin will extend some parameters to the Gravatar default image URL to make the default avatars rich.",
 	"url": "https://github.com/jlchntoz/nodebb-plugin-gravatar-extended",
 	"library": "./index.js",
-	"hooks": [],
+	"hooks": [
+		{ "hook": "static:app.load", "method": "init" },
+		{ "hook": "filter:users.get", "method": "onGetUsers" }
+	],
 	"staticDirs": {},
 	"scripts" : [],
 	"css": []

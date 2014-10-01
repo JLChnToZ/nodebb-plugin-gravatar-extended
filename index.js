@@ -20,7 +20,5 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  *  THE SOFTWARE.
  */
-
-require("./lib/gravatar.extend.js");
  
-module.exports = function() { /* Yeah, nothing exports here. */ };
+module.exports = require("./lib/gravatar.extend.js");
