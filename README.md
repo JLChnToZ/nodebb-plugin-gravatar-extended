@@ -10,6 +10,8 @@ this field is going to accept these parameters:
 
 - `%md5` - the MD5 string of the user's email
 - `%email` - the raw email address
+- `%user` - the user name
+- `%size` - the image size
 
 Example
 -------

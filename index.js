@@ -61,6 +61,9 @@
     }},
     { regex: /%user/i, fn: function(r) {
       return r.username;
+    }},
+    { regex: /%size/i, fn: function(r) {
+      return r.size;
     }}
   ];
 
@@ -75,6 +78,7 @@
     };
     if(!user.email)
       user.email = "";
+    user.size = options.size;
     for(var i = 0; i < converts.length; i++)
       options.default = options.default.replace(converts[i].regex, converts[i].fn(user));
     return gravatar.url(user.email, options, true);
