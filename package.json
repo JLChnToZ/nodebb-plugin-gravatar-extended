@@ -22,6 +22,6 @@
   },
   "homepage": "https://github.com/JLChnToZ/nodebb-plugin-gravatar-extended",
   "dependencies": {
-    "array.from": "^0.2.0"
+    "underscore": "^1.7.0"
   }
 }

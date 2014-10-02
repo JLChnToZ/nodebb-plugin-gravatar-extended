@@ -47,9 +47,10 @@
 (function(gravatarExtended) {
   var gravatar = module.parent.require("gravatar"),
   User = module.parent.require("./user"),
-  Meta = module.parent.require('./meta'),
-  nconf = module.parent.require('nconf'),
-  crypto = require("crypto");
+  Meta = module.parent.require("./meta"),
+  nconf = module.parent.require("nconf"),
+  crypto = require("crypto"),
+  _ = require("underscore");
 
   var converts = [
     { regex: /%md5/i, fn: function(r) {
@@ -62,38 +63,36 @@
       return r.username;
     }}
   ];
-  var prefix = '__GRAVATAR__';
 
   function createGravatarURL(user) {
     var customGravatarDefaultImage = Meta.config.customGravatarDefaultImage;
-    if (customGravatarDefaultImage && customGravatarDefaultImage.indexOf('http') === -1)
-      customGravatarDefaultImage = nconf.get('url') + Meta.config.customGravatarDefaultImage;
+    if (customGravatarDefaultImage && customGravatarDefaultImage.indexOf("http") === -1)
+      customGravatarDefaultImage = nconf.get("url") + Meta.config.customGravatarDefaultImage;
     var options = {
       size: parseInt(Meta.config.profileImageDimension, 10) || 128,
-      default: customGravatarDefaultImage || Meta.config.defaultGravatarImage || 'identicon',
-      rating: 'pg'
+      default: customGravatarDefaultImage || Meta.config.defaultGravatarImage || "identicon",
+      rating: "pg"
     };
     if(!user.email)
-      user.email = '';
+      user.email = "";
     for(var i = 0; i < converts.length; i++)
       options.default = options.default.replace(converts[i].regex, converts[i].fn(user));
     return gravatar.url(user.email, options, true);
   }
   
   gravatarExtended.init = function() {
-    require("./lib/overrider");
-    User.override("createGravatarURLFromEmail", function(orig, email) {
-      return { email: email };
-    });
+    User.createGravatarURLFromEmail = function(email) {
+      return { email: email }; 
+    };
   };
   
   gravatarExtended.onGetUsers = function(users, callback) {
     try {
       users.forEach(function(user) {
-        if (user && typeof user.picture == 'object') {
-          var _user = user;
+        if (user && typeof user.picture == "object") {
+          var _user = _.clone(user);
           _user.email = user.picture.email;
-          user.picture = createGravatarURL(user);
+          user.picture = createGravatarURL(_user);
         }
       });
     } catch(ex) {
