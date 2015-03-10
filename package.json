@@ -1,27 +1,46 @@
 {
-  "name": "nodebb-plugin-gravatar-extended",
-  "version": "0.4.1",
-  "description": "This plugin will extend some parameters to the Gravatar default image URL to make the default avatars rich.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/JLChnToZ/nodebb-plugin-gravatar-extended.git"
-  },
-  "keywords": [
-    "NodeBB",
-    "Plugin",
-    "Gravatar"
-  ],
-  "author": "Jeremy Lam <jlchntoz@hkcdc.org> (http://gh.jlctz.tk/)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/JLChnToZ/nodebb-plugin-gravatar-extended/issues"
-  },
-  "homepage": "https://github.com/JLChnToZ/nodebb-plugin-gravatar-extended",
-  "dependencies": {
-    "underscore": "^1.7.0"
-  }
+	"name": "nodebb-plugin-gravatar-extended",
+	"version": "0.4.1",
+	"description": "This plugin will extend some parameters to the Gravatar default image URL to make the default avatars rich.",
+	"main": "index.js",
+	"nbbpm": {
+		"compatibility": "^0.6.0"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/JLChnToZ/nodebb-plugin-gravatar-extended.git"
+	},
+	"keywords": [
+		"NodeBB",
+		"Plugin",
+		"Gravatar"
+	],
+	"author": {
+		"name": "Jeremy Lam",
+		"email": "jlchntoz@hkcdc.org",
+		"url": "http://gh.jlctz.tk/"
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/JLChnToZ/nodebb-plugin-gravatar-extended/issues"
+	},
+	"homepage": "https://github.com/JLChnToZ/nodebb-plugin-gravatar-extended",
+	"dependencies": {
+		"underscore": "^1.7.0"
+	},
+	"gitHead": "2d6ab4f642aadc910e57c813534eda4c196e8c8f",
+	"maintainers": [
+		{
+			"name": "jlchntoz",
+			"email": "jlchntoz@hkcdc.org"
+		}
+	],
+	"dist": {
+		"shasum": "45bda79dd59d41a9669c06a4c1fc558164e64373",
+		"tarball": "http://registry.npmjs.org/nodebb-plugin-gravatar-extended/-/nodebb-plugin-gravatar-extended-0.4.1.tgz"
+	},
+	"directories": {}
 }
