@@ -5,8 +5,7 @@
 	"url": "https://github.com/jlchntoz/nodebb-plugin-gravatar-extended",
 	"library": "./index.js",
 	"hooks": [
-		{ "hook": "action:app.load", "method": "init" },
+		{ "hook": "static:app.load", "method": "init" },
 		{ "hook": "filter:users.get", "method": "onGetUsers" }
-	],
-	"minver": "0.5.1"
+	]
 }
